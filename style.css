@@ -1,0 +1,111 @@
+/*
+CSS Retirado de um video do canal Fernando Leonid.
+Link do video : https://www.youtube.com/watch?v=oGEYs52ZuHY
+Foram feitas pequenas alterações quanto ao arquivo CSS original
+*/
+
+:root {
+    --primary-color: #04394e;
+    --secondary-color: #00875e;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--primary-color);
+    font: bold 2rem 'Open Sans', sans-serif;
+}
+
+#mainDiv {
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+#titulo {
+    display: flex;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+    font-size: 3rem;
+    color: var(--primary-color);
+    border-style: dashed;
+}
+
+.todoList {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todoItem  {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+}
+
+.todoItem > div {
+    width: 80%;
+}
+
+.todoItem:hover {
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.todoItem > input[type='text'] {
+    border: none;
+    width: 80%;
+    font: inherit;
+}
+
+.todoItem > input[type='button'],
+.todoItem > input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    font: inherit;
+}
+
+/*Faz o item marcado ficar riscado*/
+.todoItem > input[type='checkbox']:checked  + p {
+    text-decoration:line-through;
+}
+
+.todoNewItem{
+    display: flex;
+    background-color: #fff59d;
+    width: 100%;
+    height: 70px;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+    margin: 10px;
+    font: inherit;
+}
+
+.todoNewItem > input{
+    background-color: #fff59d;
+    border: none;
+    width: 80%;
+    outline: none;
+    font: inherit;
+}
+
+.todoNewItem > input::placeholder {
+    font-style: italic;
+    font-weight: normal;
+}
