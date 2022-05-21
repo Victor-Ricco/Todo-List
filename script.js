@@ -1,5 +1,6 @@
 const newItem = document.getElementById("todoNewItem");
 const todoList = document.getElementById("todoList");
+const buttons = document.getElementById("features");
 
 //Cria um novo elemento e o envia para a lista
 function createTodoElement(item) {
@@ -28,4 +29,24 @@ todoList.addEventListener('click', removeItem = (event) => {
     }
 })
 
-
+//Escuta o 'click' e remove, ou os intens selecionados, ou remove todos
+buttons.addEventListener('click', removeSomeItens = (event) => {
+    //Exclui itens selecionados
+    if (event.target.value == 'Excluir Selecionados') {
+        let selectedItens = [...document.querySelectorAll('input')];
+        selectedItens.forEach(function(element) {
+            if (element.type == 'checkbox' & element.checked) {
+                element.parentNode.outerHTML = "";
+            }
+        });
+    }
+    //Excluie todos os itens
+    else if (event.target.value == 'Excluir Tudo') {
+        let selectedItens = [...document.querySelectorAll('input')];
+        selectedItens.forEach(function(element) {
+            if (element.type == 'checkbox') {
+                element.parentNode.outerHTML = ""
+            }
+        });
+    }
+});
